@@ -37,10 +37,10 @@ dependencies {
 
 
 
-        compile "org.jetbrains.anko:anko-appcompat-v7-listeners:0.10.1"
-        compile "org.jetbrains.anko:anko-design-listeners:0.10.1"
-        compile "org.jetbrains.anko:anko-design:0.10.1"
-        compile "org.jetbrains.anko:anko-sdk15-listeners:0.10.1"
-        compile "org.jetbrains.anko:anko-sdk15:0.10.1"
+//    implementation "org.jetbrains.anko:anko-appcompat-v7-listeners:0.10.1"
+//    implementation "org.jetbrains.anko:anko-design-listeners:0.10.1"
+//    implementation "org.jetbrains.anko:anko-design:0.10.1"
+//    implementation "org.jetbrains.anko:anko-sdk15-listeners:0.10.1"
+//    implementation "org.jetbrains.anko:anko-sdk15:0.10.1"
     
 }
