@@ -1,7 +1,7 @@
 package com.example.thesafetyapp
 
 class UserData {
-    var name : String =""
+    var myName : String =""
     var myPhone : Int = 0
     var phone1 : Int = 0
     var phone2 : Int = 0
@@ -11,7 +11,7 @@ class UserData {
     var email3 : String = ""
 
     constructor(
-        name: String,
+        myName: String,
         myPhone: Int,
         phone1: Int,
         phone2: Int,
@@ -20,7 +20,7 @@ class UserData {
         email2: String,
         email3: String
     ) {
-        this.name = name
+        this.myName = myName
         this.myPhone = myPhone
         this.phone1 = phone1
         this.phone2 = phone2
@@ -29,4 +29,5 @@ class UserData {
         this.email2 = email2
         this.email3 = email3
     }
+    constructor(){}
 }
