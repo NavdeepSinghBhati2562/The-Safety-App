@@ -13,11 +13,12 @@
         android:layout_height="200dp"
         android:text="SEND ALERT"
         android:textSize="50dp"
-        android:id="@+id/alertBtn"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My location"
-        android:id="@+id/myLoc"/>
+        android:id="@+id/alertBtn"
+        android:layout_marginBottom="50dp"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="EDIT"
+       android:id="@+id/editBtn"/>
 
 </LinearLayout>

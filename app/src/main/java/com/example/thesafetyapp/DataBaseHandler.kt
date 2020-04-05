@@ -96,4 +96,12 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
     }
 
 
+    fun deleteData(){
+
+        val db =this.writableDatabase
+        db.delete(TABLE_NAME, null,null)
+        db.close()
+    }
+
+
 }

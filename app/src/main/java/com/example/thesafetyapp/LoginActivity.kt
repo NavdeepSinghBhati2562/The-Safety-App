@@ -1,23 +1,28 @@
 package com.example.thesafetyapp
 
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-import android.content.Intent
-import android.content.SharedPreferences
-import android.content.pm.PackageManager
-import android.view.View
-
-
-class MainActivity : AppCompatActivity()
+class LoginActivity : AppCompatActivity()
 {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val preferences =
+            getSharedPreferences("Login", Context.MODE_PRIVATE)
+        val editor = preferences.edit()
+        editor.putInt("flag", 1)
+        editor.apply()
+
+
         var db =DataBaseHandler(applicationContext)
 
         submitBtn.setOnClickListener(View.OnClickListener {
@@ -46,7 +51,7 @@ class MainActivity : AppCompatActivity()
 
 
 
-                val intent = Intent(this@MainActivity,Home::class.java)
+                val intent = Intent(this@LoginActivity,Home::class.java)
                 startActivity(intent)
                 finish()
 

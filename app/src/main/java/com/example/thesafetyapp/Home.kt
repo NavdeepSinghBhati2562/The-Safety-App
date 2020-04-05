@@ -1,11 +1,13 @@
 package com.example.thesafetyapp
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -14,37 +16,40 @@ import androidx.core.content.ContextCompat
 
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.android.synthetic.main.activity_data__display.*
 
 import kotlinx.android.synthetic.main.activity_home.*
 
 import java.util.*
+import java.util.jar.Manifest
 
 import kotlin.text.StringBuilder
 
 class Home : AppCompatActivity() {
-
+    val MY_PERMISSION_REQUEST_SEND_SMS :Int = 0
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     val MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
-
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
         fetchLocation()
+        gettingSMSpermission()
 
-
+        editBtn.setOnClickListener {
+           val intent = Intent(this@Home,EditActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
     }
 
     private fun fetchLocation() {
-
-        Log.d("navdeep", "HEllo")
 
         if (ContextCompat.checkSelfPermission(this@Home,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -100,14 +105,15 @@ class Home : AppCompatActivity() {
                     .addOnSuccessListener { location: Location? ->
                         // Got last known location. In some rare situations this can be null.
 
-                        if (location != null) { //logic handle location
+                        if (location != null) {
+                            //logic handle location
                             var latitude: Double = location.latitude
                             var longitude: Double = (location.longitude)
 
                             //getting current Location Address
-                            myLoc.text =getCompAddress(latitude,longitude)
-
-
+                            var curLoc : String = getCompAddress(latitude,longitude).toString()
+                            //SENDING TEXT SMS OF ALERT WITH CURRENT ADDRESS
+                            sendTextMessage(curLoc)
                         }
 
 
@@ -151,6 +157,55 @@ class Home : AppCompatActivity() {
         return address
     }
 
+
+
+    private fun gettingSMSpermission() {
+        //check if the permission is not granted
+        if (ContextCompat.checkSelfPermission(this@Home, android.Manifest.permission.SEND_SMS) !=
+            PackageManager.PERMISSION_GRANTED
+        ) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this@Home,
+                    android.Manifest.permission.SEND_SMS
+                )
+            ) {
+            } else {
+                // a pop up will appear asking for required permission i.e aloow or deny
+                ActivityCompat.requestPermissions(
+                    this@Home,
+                    arrayOf(android.Manifest.permission.SEND_SMS),
+                    MY_PERMISSION_REQUEST_SEND_SMS
+                )
+            }
+        }
+    }
+
+    @Override
+    fun onRequestPermission(requestCode: Int, permission: Array<String?>?, grantResult: IntArray
+    ) {
+        //willl check the request code
+        when (requestCode) {
+            MY_PERMISSION_REQUEST_SEND_SMS ->
+                //check whether the result of grant resukt is greater than 0 and equal to PERMISSON GRANTED
+                if (grantResult.size > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this@Home, "Thanks for permitting", Toast.LENGTH_SHORT).show()
+                }
+            else{
+                    Toast.makeText(this@Home,"You idiot",Toast.LENGTH_LONG).show()
+                }
+        } //method
+
+    }
+
+    protected fun sendTextMessage(currentLoc : String) {
+        val smsManager = SmsManager.getDefault()
+
+
+
+
+        smsManager.sendTextMessage("8952972562", null, "Please Help me, I am Cautious \n I am here : "+currentLoc, null, null)
+        Toast.makeText(this@Home, "Sent", Toast.LENGTH_SHORT).show()
+    }
 
 
     }
