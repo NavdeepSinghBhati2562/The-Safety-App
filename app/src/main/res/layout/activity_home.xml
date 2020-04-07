@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#C35C5C">
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:text="SEND ALERT"
-        android:textSize="50dp"
+    <ImageButton
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
         android:id="@+id/alertBtn"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/alert_button"/>
    <Button
        android:layout_width="match_parent"
        android:layout_height="wrap_content"

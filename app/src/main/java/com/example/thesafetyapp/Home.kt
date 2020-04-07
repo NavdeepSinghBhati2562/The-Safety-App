@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -40,13 +43,46 @@ class Home : AppCompatActivity() {
         fetchLocation()
         gettingSMSpermission()
 
-        editBtn.setOnClickListener {
-           val intent = Intent(this@Home,EditActivity::class.java)
-            startActivity(intent)
+
+
+
+
+    }
+
+     fun openSetting(){
+
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        var inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.three_button_menu,menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var intentEditclass = Intent(this@Home,EditActivity::class.java)
+
+
+        when(item?.itemId)
+        {
+            R.id.settingBtn ->
+               // Toast.makeText(this,"setting us",Toast.LENGTH_LONG).show()
+
+            startActivity(intentEditclass)
+
+
+
+            R.id.aboutusBtn ->
+                Toast.makeText(this,"about us",Toast.LENGTH_LONG).show()
+            R.id.helpBtn ->
+                Toast.makeText(this,"help",Toast.LENGTH_LONG).show()
+
         }
 
 
-
+        return super.onContextItemSelected(item)
     }
 
     private fun fetchLocation() {
@@ -199,10 +235,6 @@ class Home : AppCompatActivity() {
 
     protected fun sendTextMessage(currentLoc : String) {
         val smsManager = SmsManager.getDefault()
-
-
-
-
         smsManager.sendTextMessage("8952972562", null, "Please Help me, I am Cautious \n I am here : "+currentLoc, null, null)
         Toast.makeText(this@Home, "Sent", Toast.LENGTH_SHORT).show()
     }

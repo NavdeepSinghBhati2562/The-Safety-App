@@ -104,4 +104,31 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
     }
 
 
+    //Updating phone phone number
+    fun updatePhone1(updatePhone : Int){
+
+
+
+        val db=this.writableDatabase
+        val query = "Select * from "+ TABLE_NAME
+        val result = db.rawQuery(query,null)
+
+        if (result.moveToFirst())
+        {
+            do{
+                var cv = ContentValues();
+                cv.put(COL_PHONE1,result.getInt(result.getColumnIndex(updatePhone.toString()))) //updating phone number
+                db.update(TABLE_NAME,cv, COL_MYPHONE + "=? AND "+ COL_NAME + "=?",
+                arrayOf(result.getString(result.getColumnIndex(COL_MYPHONE)),
+                    result.getString(result.getColumnIndex(COL_NAME))))
+
+            }while (result.moveToNext())
+
+        }
+
+        result.close()
+        db.close()
+
+    }
+
 }

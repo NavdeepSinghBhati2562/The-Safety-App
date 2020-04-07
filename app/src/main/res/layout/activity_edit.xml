@@ -7,129 +7,222 @@
     tools:context=".EditActivity"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MY NAME :"
+        android:text="Your Details :"
         android:textColor="@android:color/black"
-        android:textSize="20dp"
+        android:textSize="18sp"
         />
-
-    <EditText
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <TextView
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_myname"
+        android:hint="Name"
 
         />
+    <ImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/edit_icon"
+        android:text="EDIT"
+        android:id="@+id/edit_nameBtn"
+        android:layout_marginBottom="30dp"
+        />
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MY PHONE"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        />
-
-    <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_myphone"
-        android:inputType="phone"
+        android:hint="My Phone Number"
         />
 
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+        android:text="EDIT"
+        android:id="@+id/edit_phoneBtn"
+        android:layout_marginBottom="30dp"/>
+        </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PHONE1 :"
+        android:text="Person 1 :"
         android:textColor="@android:color/black"
-        android:textSize="20dp"
+        android:textSize="18sp"
       />
 
-    <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+    <TextView
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_phone1"
-        android:inputType="phone"
+        android:text="phone 1"
+
         />
 
+
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+                android:text="EDIT"
+                android:id="@+id/edit_phone1Btn"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_email1"
+                android:text="email 1"/>
+
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+                android:text="EDIT"
+                android:id="@+id/edit_email1Btn"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PHONE 2 :"
+        android:text="Person 2 :"
         android:textColor="@android:color/black"
         android:textSize="20dp"
         />
-
-    <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+    <TextView
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_phone2"
-        android:inputType="phone"/>
+        android:text="phone 2"
+        />
 
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+                android:text="EDIT"
+                android:id="@+id/edit_phone2Btn"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_email2"
+                android:text="email 2"
+                />
+
+
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+                android:text="EDIT"
+                android:id="@+id/edit_email2Btn"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PHONE 3 :"
+        android:text="Pesron 3 :"
         android:textColor="@android:color/black"
         android:textSize="20dp"
         />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
 
-    <EditText
+    <TextView
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_phone3"
-        android:inputType="phone"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-mail 1 :"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
+        android:text="phone 3"
         />
 
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit_email1"
-        android:inputType="textEmailAddress"/>
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+                android:text="EDIT"
+                android:id="@+id/edit_phone3Btn"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_email3"
+                android:text="email 3"
+                />
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-mail 2 :"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit_email2"
-        android:inputType="textEmailAddress"/>
-    />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-mail 3 :"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit_email3"
-        android:inputType="textEmailAddress"/>
-    />
-
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/edit_icon"
+                android:text="EDIT"
+                android:id="@+id/edit_email3Btn"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="SAVE CHANGES"
-        android:id="@+id/save_changesBtn"/>
+        android:id="@+id/save_changesBtn"
+        android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

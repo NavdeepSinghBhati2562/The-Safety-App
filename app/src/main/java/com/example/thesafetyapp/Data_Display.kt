@@ -14,13 +14,7 @@ class Data_Display : AppCompatActivity() {
         var db =DataBaseHandler(applicationContext)
 
         var data = db.readableData()
-//        show.text= ""
-//        for (i in 0..(data.size-1)){
-//
-//            show.append(data.get(i).myName +" "+ data.get(i).myPhone+" "+data.get(i).phone1
-//            +" "+data.get(i).phone2+" "+data.get(i).phone3+" "+data.get(i)+" "+data.get(i).email1
-//            +" "+data.get(i).email2+" "+data.get(i).email3)
-//        }
+
 
         show_name.append(data.get(0).myName)
         show_yourPhone.append(data.get(0).myPhone.toString())
