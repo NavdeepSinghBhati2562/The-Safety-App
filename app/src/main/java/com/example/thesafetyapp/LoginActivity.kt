@@ -37,10 +37,10 @@ class LoginActivity : AppCompatActivity()
                 help_email3.text.toString().length>0 )
             {
                 var user = UserData(my_name.text.toString(),
-                    my_number.text.toString().toInt(),
-                    help_number1.text.toString().toInt(),
-                    help_number2.text.toString().toInt(),
-                    help_number3.text.toString().toInt(),
+                    my_number.text.toString(),
+                    help_number1.text.toString(),
+                    help_number2.text.toString(),
+                    help_number3.text.toString(),
                     help_email1.text.toString(),
                     help_email1.text.toString(),
                     help_email1.text.toString())

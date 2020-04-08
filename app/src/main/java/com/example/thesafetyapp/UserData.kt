@@ -2,20 +2,20 @@ package com.example.thesafetyapp
 
 class UserData {
     var myName : String =""
-    var myPhone : Int = 0
-    var phone1 : Int = 0
-    var phone2 : Int = 0
-    var phone3 : Int = 0
+    var myPhone : String =""
+    var phone1 : String =""
+    var phone2 : String =""
+    var phone3 : String =""
     var email1 : String = ""
     var email2 : String = ""
     var email3 : String = ""
 
     constructor(
         myName: String,
-        myPhone: Int,
-        phone1: Int,
-        phone2: Int,
-        phone3: Int,
+        myPhone: String,
+        phone1: String,
+        phone2: String,
+        phone3: String,
         email1: String,
         email2: String,
         email3: String

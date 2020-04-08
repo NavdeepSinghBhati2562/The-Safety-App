@@ -23,13 +23,13 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
 
         val createTable ="CREATE TABLE "+ TABLE_NAME + "(" +
                 COL_NAME + " VARCHAR(256),"+
-                COL_MYPHONE + " INTEGER PRIMARY KEY,"+
-                COL_PHONE1 + " INTEGER," +
-                COL_PHONE2 + " INTEGER," +
-                COL_PHONE3 + " INTEGER," +
+                COL_MYPHONE + " VARCHAR(256) PRIMARY KEY,"+
+                COL_PHONE1 + " VARCHAR(256)," +
+                COL_PHONE2 + " VARCHAR(256)," +
+                COL_PHONE3 + " VARCHAR(256)," +
                 COL_EMAIL1 + " VARCHAR(256)," +
                 COL_EMAIL2 + " VARCHAR(256)," +
-                COL_EMAIL3 + " VARCHAR(256))";
+                COL_EMAIL3 + " VARCHAR(256))"
 
         db?.execSQL(createTable)
 
@@ -75,10 +75,10 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
             do{
                 var user = UserData()
                 user.myName = result.getString(result.getColumnIndex(COL_NAME))
-                user.myPhone = result.getString(result.getColumnIndex(COL_MYPHONE)).toInt()
-                user.phone1 = result.getString(result.getColumnIndex(COL_PHONE1)).toInt()
-                user.phone2 = result.getString(result.getColumnIndex(COL_PHONE2)).toInt()
-                user.phone3 = result.getString(result.getColumnIndex(COL_PHONE3)).toInt()
+                user.myPhone = result.getString(result.getColumnIndex(COL_MYPHONE))
+                user.phone1 = result.getString(result.getColumnIndex(COL_PHONE1))
+                user.phone2 = result.getString(result.getColumnIndex(COL_PHONE2))
+                user.phone3 = result.getString(result.getColumnIndex(COL_PHONE3))
                 user.email1 = result.getString(result.getColumnIndex(COL_EMAIL1))
                 user.email2 = result.getString(result.getColumnIndex(COL_EMAIL2))
                 user.email3 = result.getString(result.getColumnIndex(COL_EMAIL3))
@@ -104,8 +104,8 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
     }
 
 
-    //Updating phone phone number
-    fun updatePhone1(updatePhone : Int){
+    //Updating database
+    fun updateDatabase(updatedb: String){
 
 
 
@@ -117,8 +117,8 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
         {
             do{
                 var cv = ContentValues();
-                cv.put(COL_PHONE1,result.getInt(result.getColumnIndex(updatePhone.toString()))) //updating phone number
-                db.update(TABLE_NAME,cv, COL_MYPHONE + "=? AND "+ COL_NAME + "=?",
+                cv.put(COL_NAME,result.getString(result.getColumnIndex(COL_NAME))) //updating phone number
+                db.update(TABLE_NAME,cv, COL_MYPHONE + "=? AND "+ COL_PHONE1 + "=?",
                 arrayOf(result.getString(result.getColumnIndex(COL_MYPHONE)),
                     result.getString(result.getColumnIndex(COL_NAME))))
 

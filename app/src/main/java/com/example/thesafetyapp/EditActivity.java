@@ -44,10 +44,10 @@ Button save_changesBtn;
         List<UserData> data = db.readableData();
 
         edit_myname.append(data.get(0).getMyName());
-        edit_myphone.append(String.valueOf((data.get(0).getMyPhone())));
-        edit_phone1.append(String.valueOf((data.get(0).getPhone1())));
-        edit_phone2.append(String.valueOf((data.get(0).getPhone2())));
-        edit_phone3.append(String.valueOf((data.get(0).getPhone3())));
+        edit_myphone.append(data.get(0).getMyPhone());
+        edit_phone1.append(data.get(0).getPhone1());
+        edit_phone2.append(data.get(0).getPhone2());
+        edit_phone3.append(data.get(0).getPhone3());
         edit_email1.append(data.get(0).getEmail1());
         edit_email2.append(data.get(0).getEmail2());
         edit_email3.append(data.get(0).getEmail3());
@@ -63,10 +63,10 @@ Button save_changesBtn;
                 db.deleteData();
                 UserData user = new UserData(
                         edit_myname.getText().toString(),
-                        Integer.parseInt(edit_myphone.getText().toString()),
-                        Integer.parseInt(edit_phone1.getText().toString()),
-                        Integer.parseInt(edit_phone2.getText().toString()),
-                        Integer.parseInt(edit_phone3.getText().toString()),
+                       edit_myphone.getText().toString(),
+                        edit_phone1.getText().toString(),
+                       edit_phone2.getText().toString(),
+                        edit_phone3.getText().toString(),
                         edit_email1.getText().toString(),
                         edit_email2.getText().toString(),
                         edit_email3.getText().toString()
@@ -106,6 +106,8 @@ Button save_changesBtn;
                 public void onClick(View v) {
                     edit_myname.setText(write.getText().toString());
                     alertDialog.dismiss();
+
+                    
                 }
             });
 

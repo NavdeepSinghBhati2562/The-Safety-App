@@ -17,10 +17,10 @@ class Data_Display : AppCompatActivity() {
 
 
         show_name.append(data.get(0).myName)
-        show_yourPhone.append(data.get(0).myPhone.toString())
-        show_phone1.append(data.get(0).phone1.toString())
-        show_phone2.append(data.get(0).phone2.toString())
-        show_phone3.append(data.get(0).phone3.toString())
+        show_yourPhone.append(data.get(0).myPhone)
+        show_phone1.append(data.get(0).phone1)
+        show_phone2.append(data.get(0).phone2)
+        show_phone3.append(data.get(0).phone3)
         show_email1.append(data.get(0).email1)
         show_email2.append(data.get(0).email2)
         show_email3.append(data.get(0).email3)
