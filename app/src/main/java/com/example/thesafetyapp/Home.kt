@@ -44,14 +44,16 @@ class Home : AppCompatActivity() {
         gettingSMSpermission()
 
 
+            displayBtn.setOnClickListener {
+                var dislay = Intent(this@Home,Data_Display::class.java)
+                startActivity(dislay)
+            }
+
 
 
 
     }
 
-     fun openSetting(){
-
-    }
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

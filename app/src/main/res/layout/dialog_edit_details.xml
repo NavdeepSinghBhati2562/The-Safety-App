@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Enter Value"
+        android:layout_margin="4dp"
+        android:id="@+id/write"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="save"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:id="@+id/saveNowBtn"
+        />
+
+</LinearLayout>

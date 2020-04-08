@@ -35,7 +35,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_myname"
-        android:hint="Name"
+       android:text="Name"
 
         />
     <ImageButton
@@ -45,6 +45,7 @@
         android:text="EDIT"
         android:id="@+id/edit_nameBtn"
         android:layout_marginBottom="30dp"
+        android:onClick="onEditButtonClick"
         />
 </LinearLayout>
         <LinearLayout
@@ -58,14 +59,15 @@
         android:id="@+id/edit_myphone"
         android:hint="My Phone Number"
         />
-
             <ImageButton
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/edit_icon"
         android:text="EDIT"
         android:id="@+id/edit_phoneBtn"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -96,7 +98,9 @@
                 android:background="@drawable/edit_icon"
                 android:text="EDIT"
                 android:id="@+id/edit_phone1Btn"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,12 +115,14 @@
 
 
             <ImageButton
-                android:layout_width="20dp"
+                android:id="@+id/edit_email1Btn"
+                android:layout_width="17dp"
                 android:layout_height="20dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/edit_icon"
                 android:text="EDIT"
-                android:id="@+id/edit_email1Btn"
-                android:layout_marginBottom="30dp"/>
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -143,7 +149,9 @@
                 android:background="@drawable/edit_icon"
                 android:text="EDIT"
                 android:id="@+id/edit_phone2Btn"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,7 +173,9 @@
                 android:background="@drawable/edit_icon"
                 android:text="EDIT"
                 android:id="@+id/edit_email2Btn"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -193,7 +203,9 @@
                 android:background="@drawable/edit_icon"
                 android:text="EDIT"
                 android:id="@+id/edit_phone3Btn"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -214,7 +226,9 @@
                 android:background="@drawable/edit_icon"
                 android:text="EDIT"
                 android:id="@+id/edit_email3Btn"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="30dp"
+                android:onClick="onEditButtonClick"
+                />
         </LinearLayout>
     <Button
         android:layout_width="100dp"

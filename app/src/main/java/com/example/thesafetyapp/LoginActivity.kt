@@ -44,23 +44,13 @@ class LoginActivity : AppCompatActivity()
                     help_email1.text.toString(),
                     help_email1.text.toString(),
                     help_email1.text.toString())
-
                 db.insertData(user)
 
             //    getSharedPreferences("login", Context.MODE_PRIVATE)
-
-
-
+                Toast.makeText(this,"Details entered sucessfully",Toast.LENGTH_LONG).show()
                 val intent = Intent(this@LoginActivity,Home::class.java)
                 startActivity(intent)
                 finish()
-
-
-
-
-                
-
-
             }else   Toast.makeText(applicationContext,"Please Fill all the Blocks", Toast.LENGTH_LONG).show()
 
 
