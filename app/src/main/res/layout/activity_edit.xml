@@ -20,24 +20,30 @@
             >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Your Details :"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="18sp"
+        android:background="#681748"
+        android:paddingLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
         />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+
     >
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_myname"
        android:text="Name"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-condensed-medium" />
 
-        />
     <ImageButton
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -46,6 +52,9 @@
         android:id="@+id/edit_nameBtn"
         android:layout_marginBottom="30dp"
         android:onClick="onEditButtonClick"
+        android:contextClickable="true"
+        android:clickable="true"
+
         />
 </LinearLayout>
         <LinearLayout
@@ -54,10 +63,13 @@
             android:orientation="horizontal"
             >
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_myphone"
-        android:hint="My Phone Number"
+        android:text="My Phone Number"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-condensed-medium"
+
         />
             <ImageButton
                 android:layout_width="20dp"
@@ -68,14 +80,30 @@
         android:layout_marginBottom="30dp"
                 android:onClick="onEditButtonClick"
                 />
+
         </LinearLayout>
-    <TextView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardian Details :"
+                android:textColor="@android:color/white"
+                android:background="#681748"
+
+                android:textSize="18sp"
+                android:paddingLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif-condensed-medium"/>
+
+            <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Person 1 :"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/holo_green_dark"
         android:textSize="18sp"
-      />
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textStyle="bold"
+
+                />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,10 +111,12 @@
             android:orientation="horizontal"
             >
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_phone1"
         android:text="phone 1"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-condensed-medium"
 
         />
 
@@ -108,10 +138,12 @@
             android:orientation="horizontal"
             >
             <TextView
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/edit_email1"
-                android:text="email 1"/>
+                android:text="email 1"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-condensed-medium"/>
 
 
             <ImageButton
@@ -128,8 +160,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Person 2 :"
-        android:textColor="@android:color/black"
         android:textSize="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_dark"
+
+
         />
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,10 +173,12 @@
             android:orientation="horizontal"
             >
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_phone2"
         android:text="phone 2"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-condensed-medium"
         />
 
             <ImageButton
@@ -159,10 +197,12 @@
             android:orientation="horizontal"
             >
             <TextView
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/edit_email2"
                 android:text="email 2"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-condensed-medium"
                 />
 
 
@@ -181,8 +221,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pesron 3 :"
-        android:textColor="@android:color/black"
         android:textSize="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_dark"
+
+
         />
         <LinearLayout
             android:layout_width="match_parent"
@@ -191,10 +235,12 @@
             >
 
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_phone3"
         android:text="phone 3"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-condensed-medium"
         />
 
             <ImageButton
@@ -214,10 +260,12 @@
             android:layout_marginBottom="10dp"
             >
             <TextView
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/edit_email3"
                 android:text="email 3"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-condensed-medium"
                 />
 
             <ImageButton
@@ -230,12 +278,7 @@
                 android:onClick="onEditButtonClick"
                 />
         </LinearLayout>
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="SAVE CHANGES"
-        android:id="@+id/save_changesBtn"
-        android:layout_gravity="center_horizontal"/>
+
         </LinearLayout>
     </ScrollView>
 

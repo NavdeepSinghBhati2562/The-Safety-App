@@ -56,7 +56,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
             Toast.makeText(context,"Failed",Toast.LENGTH_LONG).show()
 
         }
-        else  Toast.makeText(context,"Success",Toast.LENGTH_LONG).show()
+        else  Toast.makeText(context,"Updated Successfully",Toast.LENGTH_LONG).show()
 
 
 
@@ -121,9 +121,7 @@ class DataBaseHandler(var context: Context) : SQLiteOpenHelper(context, DATABASE
                 db.update(TABLE_NAME,cv, COL_MYPHONE + "=? AND "+ COL_PHONE1 + "=?",
                 arrayOf(result.getString(result.getColumnIndex(COL_MYPHONE)),
                     result.getString(result.getColumnIndex(COL_NAME))))
-
-            }while (result.moveToNext())
-
+            }while(result.moveToNext())
         }
 
         result.close()

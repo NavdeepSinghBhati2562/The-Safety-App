@@ -28,6 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                     iNext = new Intent(SplashActivity.this, Home.class);
                 }
                 startActivity(iNext);
+                finish();
 
             }
         },1000);
